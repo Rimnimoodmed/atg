@@ -35,7 +35,7 @@ public class Searcher {
         visited.add(start);
         ArrayList<Aspect> path = new ArrayList<>();
         String dadId = id.substring(0, id.length()-1);
-        path = (ArrayList<Aspect>) pathMap.get(dadId);
+        path = (ArrayList<Aspect>) ((ArrayList<Aspect>)(pathMap.get(dadId))).clone();
         System.out.println(path+","+id);
         path.add(start);
         System.out.println(path+","+id);
@@ -57,10 +57,7 @@ public class Searcher {
     
 
     private void bakePath(String id){
-        for (int i = 0; i < id.length(); i++) {
-            String subID = id.substring(0,id.length()- i);
-            System.out.println(pathMap.get(subID));
-        }
+            System.out.println("Working Path"+pathMap.get(id));
     }
     public void search2(Aspect start, Aspect end){
         pathSearch(start,end,"0");

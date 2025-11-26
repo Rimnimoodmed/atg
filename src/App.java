@@ -16,6 +16,6 @@ public class App {
         Aspect praecanto = new Aspect(energy, vacuos, "praecanto");
         Searcher searcher = new Searcher();
         //searcher.search(energy, dust);
-        searcher.search2(fire, dust);
+        searcher.search2(fire, air);
     }
 }
